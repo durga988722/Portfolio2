@@ -176,8 +176,8 @@ export default function App() {
               </a>
             </motion.div>
           </div>
-          
-          <motion.div 
+          {/* Scroll Down Button */}
+			  {/*<motion.div 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
@@ -190,7 +190,7 @@ export default function App() {
                 </svg>
               </div>
             </Link>
-          </motion.div>
+          </motion.div> */}
         </section>
 
         {/* About */}
@@ -503,7 +503,7 @@ export default function App() {
         {/* Contact */}
         <SectionWrapper id="contact">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8 relative inline-block">
+            <h2 className="text-4xl font-bold mb-10 relative inline-block z-20">
               <span className="relative z-10">Get in Touch</span>
               <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-400/30 z-0"></span>
             </h2>
@@ -513,7 +513,7 @@ export default function App() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 inline-block"
+              className="mt-10 bg-gray-800/50 p-8 rounded-xl border border-gray-700 w-full max-w-2xl mx-auto z-10"
             >
               <p className="text-xl mb-6">I'm always open to discussing new opportunities and collaborations.</p>
               
