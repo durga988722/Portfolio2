@@ -1,10 +1,34 @@
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  scroll-behavior: smooth;
+/* App.css */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
 
 .bg-animation {
+  position: relative;
+  overflow: hidden;
   background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #53354a);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
@@ -22,3 +46,8 @@ body {
   }
 }
 
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
