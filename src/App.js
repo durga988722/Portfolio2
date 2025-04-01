@@ -156,7 +156,7 @@ export default function App() {
                 dponnuru6@gmail.com
               </a>
               <a
-                href="/Durgamalleswarao_Resume.pdf"
+                href="Durgamalleswarao_Resume.pdf"
                 download
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
               >
