@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -303,6 +302,8 @@ export default function App() {
             </div>
           </div>
         </SectionWrapper>
+		
+		
 
         {/* Experience */}
         <SectionWrapper id="experience">
@@ -367,7 +368,7 @@ export default function App() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={cardVariants}
-                  className={`mb-12 relative ${i % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}
+                  className={`mb-12 relative ${i % 2 === 0 ? 'md:pr-8 md:text-left' : 'md:pl-8'}`}
                 >
                   <div className={`md:w-1/2 p-6 rounded-xl bg-gray-800/50 border border-gray-700 hover:border-blue-400/50 transition-all duration-300 ${i % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
                     <div className="absolute top-5 -left-2 md:left-1/2 w-4 h-4 rounded-full bg-blue-400 transform -translate-x-1/2"></div>

@@ -1,53 +1,94 @@
-/* App.css */
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+/* Animations */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
+/* Base Styles */
+.portfolio-container {
+  @apply font-sans bg-gray-900 text-white min-h-screen relative overflow-hidden;
 }
 
 .bg-animation {
-  position: relative;
-  overflow: hidden;
   background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #53354a);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
 
-@keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
+/* Components */
+.main-nav {
+  @apply fixed top-0 w-full bg-gray-900/90 backdrop-blur-sm z-50 py-3 px-4 shadow-lg;
+}
+
+.hero-section {
+  @apply min-h-[90vh] flex flex-col justify-center items-center text-center px-6 pt-24 pb-16;
+}
+
+.section-heading {
+  @apply text-3xl sm:text-4xl font-bold mb-8 relative inline-block;
+}
+
+.info-card {
+  @apply bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:shadow-blue-500/20 transition-all;
+}
+
+.project-card {
+  @apply bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-400/50 transition-all;
+}
+
+.tech-tag {
+  @apply px-3 py-1 bg-gray-700/50 rounded-full text-sm;
+}
+
+.contact-button {
+  @apply px-6 py-3 rounded-full border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 transition-all;
+}
+
+.linkedin-button {
+  @apply px-6 py-3 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-all;
+}
+
+.scroll-top-btn {
+  @apply fixed bottom-6 right-6 bg-gradient-to-r from-blue-500 to-purple-500 text-white p-3 rounded-full shadow-lg hover:shadow-blue-500/30 z-50;
+}
+
+.main-footer {
+  @apply py-6 text-center text-gray-400 border-t border-gray-800;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    @apply pt-32 pb-12;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  
+  .section-heading {
+    @apply text-2xl mb-6;
   }
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  scroll-behavior: smooth;
+/* Accessibility Enhancements */
+button:focus, a:focus {
+  @apply outline-none ring-2 ring-blue-400 ring-offset-2 ring-offset-gray-900;
+}
+
+/* Print Styles */
+@media print {
+  .main-nav, .scroll-top-btn {
+    @apply hidden;
+  }
+  
+  .portfolio-container {
+    @apply bg-white text-black;
+  }
+  
+  .info-card, .project-card {
+    @apply bg-white border-gray-200 shadow-none;
+  }
 }
