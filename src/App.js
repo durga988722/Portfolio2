@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
@@ -41,10 +41,27 @@ const SectionWrapper = ({ id, children }) => (
   </motion.section>
 );
 
+const useClickOutside = (ref, callback) => {
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        callback();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref, callback]);
+};
+
 export default function App() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  
+  useClickOutside(menuRef, () => setIsMenuOpen(false));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,6 +112,8 @@ export default function App() {
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md shadow-lg z-50 p-3 md:p-4">
         <div className="max-w-6xl mx-auto flex justify-center md:justify-between items-center">
+		
+		{/* Menu button in mobile */}
 			<button 
 			  className="md:hidden p-2 text-gray-300 mr-2 md:mr-4"
 			  onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -103,6 +122,8 @@ export default function App() {
 				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
 			  </svg>
 			</button>
+			
+		  {/* Name */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -138,7 +159,10 @@ export default function App() {
 		
 		{/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-gray-800/95 mt-3 py-3 px-4 rounded-lg">
+          <div 
+			ref={menuRef}
+			className="md:hidden bg-gray-800/95 mt-3 py-3 px-4 rounded-lg"
+		  >
             <div className="flex flex-col gap-4">
               {['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'].map((section) => (
                 <NavLink 
