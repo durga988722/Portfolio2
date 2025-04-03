@@ -1,3 +1,54 @@
+/* Mobile-first responsive styles */
+@media (max-width: 640px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .section-heading {
+    font-size: 2rem;
+  }
+  
+  .info-card, .project-card {
+    padding: 1.5rem;
+  }
+  
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
+  
+  /* Reduce animation intensity */
+  .bg-animation {
+    animation: gradientBG 30s ease infinite;
+  }
+}
+
+/* Enhanced touch targets */
+button, a {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Optimize mobile menu transitions */
+.mobile-menu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.mobile-menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+.mobile-menu-exit {
+  opacity: 1;
+}
+.mobile-menu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+
 /* Animations */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }

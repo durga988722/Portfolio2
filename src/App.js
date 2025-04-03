@@ -44,6 +44,7 @@ const SectionWrapper = ({ id, children }) => (
 export default function App() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,9 +68,20 @@ export default function App() {
       }
     };
     
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+	const throttledScroll = throttle(handleScroll, 100);
+    window.addEventListener("scroll", throttledScroll);
+    return () => window.removeEventListener("scroll", throttledScroll);
   }, []);
+  
+	function throttle(fn, wait) {
+    let time = Date.now();
+    return function() {
+      if ((time + wait - Date.now()) < 0) {
+        fn();
+        time = Date.now();
+      }
+    };
+  }
 
   return (
     <div className="font-sans bg-gray-900 text-white min-h-screen relative overflow-hidden bg-animation">
@@ -81,7 +93,7 @@ export default function App() {
       </div>
 
       {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md shadow-lg z-50 p-4">
+      <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md shadow-lg z-50 p-3 md:p-4">
         <div className="max-w-6xl mx-auto flex justify-center md:justify-between items-center">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -90,8 +102,19 @@ export default function App() {
           >
             D. Ponnuru
           </motion.div>
-          
-          <div className="flex gap-6">
+		  
+		  {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2 text-gray-300"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+		  
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6">
             {['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'].map((section) => (
               <Link
                 key={section}
@@ -114,26 +137,42 @@ export default function App() {
             ))}
           </div>
         </div>
+		
+		{/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-gray-800/95 mt-3 py-3 px-4 rounded-lg">
+            <div className="flex flex-col gap-4">
+              {['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'].map((section) => (
+                <NavLink 
+                  key={section} 
+                  section={section} 
+                  activeSection={activeSection}
+                  onClick={() => setIsMenuOpen(false)}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
-      <main className="pt-20">
+      <main className="pt-16 md:pt-20">
         {/* Home */}
-        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
-          <div className="max-w-4xl mx-auto">
+        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 relative">
+          <div className="max-w-4xl mx-auto w-full">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="mb-6 md:mb-8 px-2"
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                 Durgamalleswarao Ponnuru
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-xl md:text-2xl text-gray-300 mb-8"
+                className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8"
               >
                 Data Engineer | Cloud & Big Data Specialist
               </motion.p>
@@ -143,7 +182,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row justify-center items-center gap-6"
+              className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-6 w-full px-2"
             >
               <a 
                 href="mailto:dponnuru6@gmail.com" 
@@ -580,3 +619,63 @@ export default function App() {
     </div>
   );
 }
+
+// New reusable NavLink component
+const NavLink = ({ section, activeSection, onClick }) => (
+  <Link
+    to={section}
+    smooth={true}
+    duration={500}
+    spy={true}
+    onClick={onClick}
+    className={`cursor-pointer capitalize transition duration-300 relative py-1 md:py-0
+      ${activeSection === section ? 'text-blue-400 font-medium' : 'text-gray-300 hover:text-blue-300'}`}
+  >
+    {section}
+    {activeSection === section && (
+      <motion.span 
+        layoutId="nav-underline"
+        className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-400"
+        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+      />
+    )}
+  </Link>
+);
+
+// New reusable ContactButton component
+const ContactButton = ({ icon, text, href, type }) => {
+  const icons = {
+    email: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+    ),
+    download: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+    ),
+    phone: (
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+      </svg>
+    )
+  };
+
+  const baseClasses = "px-4 py-2 md:px-6 md:py-3 rounded-full transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto";
+  
+  const typeClasses = {
+    border: "border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10",
+    gradient: "bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg hover:shadow-blue-500/30"
+  };
+
+  return (
+    <a 
+      href={href} 
+      className={`${baseClasses} ${typeClasses[type]}`}
+    >
+      {icons[icon]}
+      {text}
+    </a>
+  );
+};
