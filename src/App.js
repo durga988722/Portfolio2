@@ -100,7 +100,7 @@ export default function App() {
             animate={{ opacity: 1 }}
             className="hidden md:block text-xl font-bold text-blue-400"
           >
-            D. Ponnuru
+            Durgamalleswarao Ponnuru
           </motion.div>
 		  
 		  {/* Mobile Menu Button */}
@@ -157,26 +157,25 @@ export default function App() {
 
       <main className="pt-16 md:pt-20">
         {/* Home */}
-        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 relative">
-          <div className="max-w-4xl mx-auto w-full">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-6 md:mb-8 px-2"
-            >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+        <section id="home" className="min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 py-20">
+          <div className="w-full max-w-3xl mx-auto">
+			<div classname="mb-8 px-2 sm:px-4">
+				<motion.h1
+				  initial={{ opacity: 0, y: -20 }}
+				  animate={{ opacity: 1, y: 0 }}
+				  className="text-4xl xs:text-5xl sm:text-6xl font-bold leading-snug bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 break-words px-1 mb-4"
+				>
                 Durgamalleswarao Ponnuru
-              </h1>
+              </motion.h1>
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
-                className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8"
+                className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8"
               >
                 Data Engineer | Cloud & Big Data Specialist
               </motion.p>
-            </motion.div>
+            </div>
             
             <motion.div
               initial={{ opacity: 0 }}
