@@ -48,6 +48,17 @@ button, a {
   transition: all 0.3s ease;
 }
 
+/* Ensure menu button doesn't shift layout */
+.menu-button {
+  flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+/* Desktop menu spacing */
+@media (min-width: 768px) {
+  .desktop-nav {
+    margin-left: auto; /* Push nav to right */
+  }
+}
 
 /* Animations */
 @keyframes gradientBG {

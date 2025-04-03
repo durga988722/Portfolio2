@@ -95,23 +95,21 @@ export default function App() {
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md shadow-lg z-50 p-3 md:p-4">
         <div className="max-w-6xl mx-auto flex justify-center md:justify-between items-center">
+			<button 
+			  className="md:hidden p-2 text-gray-300 mr-2 md:mr-4"
+			  onClick={() => setIsMenuOpen(!isMenuOpen)}
+			>
+			  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+			  </svg>
+			</button>
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="hidden md:block text-xl font-bold text-blue-400"
+            className="text-xl font-bold text-blue-400 mx-auto md:mx-0 md:mr-auto"
           >
             Durgamalleswarao Ponnuru
           </motion.div>
-		  
-		  {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 text-gray-300"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
 		  
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-6">
