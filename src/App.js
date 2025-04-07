@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link, animateScroll as scroll } from "react-scroll";
 import './App.css';
+import { Analytics } from "@vercel/analytics/react"
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
