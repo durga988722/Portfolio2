@@ -68,7 +68,7 @@ export default function App() {
       setShowTopBtn(window.scrollY > 300);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'publications', 'contact'];
       const scrollPosition = window.scrollY + 200;
       
       for (const section of sections) {
@@ -134,7 +134,7 @@ export default function App() {
 		  
           {/* Desktop Navigation */}
           <div className="hidden md:flex gap-6">
-            {['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'].map((section) => (
+            {['home', 'about', 'skills', 'experience', 'education', 'projects', 'publications', 'contact'].map((section) => (
               <Link
                 key={section}
                 to={section}
@@ -164,7 +164,7 @@ export default function App() {
 			className="md:hidden bg-gray-800/95 mt-3 py-3 px-4 rounded-lg"
 		  >
             <div className="flex flex-col gap-4">
-              {['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact'].map((section) => (
+              {['home', 'about', 'skills', 'experience', 'education', 'projects', 'Publications', 'contact'].map((section) => (
                 <NavLink 
                   key={section} 
                   section={section} 
@@ -308,12 +308,12 @@ export default function App() {
               {[
                 { 
                   title: 'Programming', 
-                  items: ['Python', 'R', 'SQL', 'Scala', 'Bash/Shell Scripting'],
+                  items: ['Python', 'R', 'SQL', 'Java', 'Scala', 'Bash/Shell Scripting'],
                   icon: '💻'
                 },
                 { 
                   title: 'Big Data', 
-                  items: ['Apache Spark', 'Hadoop', 'Kafka', 'Flink', 'HDFS', 'HBase'],
+                  items: ['Apache Spark', 'Hadoop', 'Kafka', 'Airflow', 'Flink', 'HDFS', 'HBase'],
                   icon: '📊'
                 },
                 { 
@@ -327,8 +327,8 @@ export default function App() {
                   icon: '📈'
                 },
                 { 
-                  title: 'Cloud', 
-                  items: ['AWS (Glue, S3, Lambda)', 'Azure (Data Factory, Synapse)', 'Terraform'],
+                  title: 'Cloud Platforms', 
+                  items: ['AWS (Glue, S3, Lambda)', 'Azure (Data Factory, Synapse)', 'Snowflake', 'Databricks', 'Terraform'],
                   icon: '☁️'
                 },
                 { 
@@ -534,7 +534,19 @@ export default function App() {
                   description: "Developed interactive dashboards for patient data visualization and reporting",
                   technologies: ["Power BI", "Snowflake", "DAX"],
                   icon: "🏥"
-                }
+                },
+				{
+                  title: "Robust ML Model Training Framework",
+                  description: "Implemented data augmentation techniques and alignment regularization to enhance model robustness and generalization, integrated with automated CI/CD and re-training pipelines.",
+                  technologies: ['Python', 'TensorFlow', 'CI/CD', 'MLflow', 'Data Augmentation', 'Docker', 'Kubernetes'],
+                  icon: "🤖"
+                },
+				{
+                  title: "Real-Time Helmet Detection System",
+                  description: "Developed a real-time surveillance system using OpenCV and machine learning to detect motorcyclists with and without helmets, achieving 87% accuracy.",
+                  technologies: ['Python', 'OpenCV', 'HOG', 'LinearSVC', 'MySQL', 'Computer Vision', 'Machine Learning'],
+                  icon: "🛡️"
+                }	
               ].map((project, i) => (
                 <motion.div
                   key={i}
@@ -559,7 +571,138 @@ export default function App() {
               ))}
             </div>
           </div>
-        </SectionWrapper>
+        </SectionWrapper>	
+
+		{/* publications */}
+		<SectionWrapper id="publications">
+		  <div className="max-w-4xl mx-auto">
+			<h2 className="text-4xl font-bold mb-8 relative inline-block">
+			  <span className="relative z-10">Publications</span>
+			  <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-400/30 z-0"></span>
+			</h2>
+			
+			<div className="space-y-6">
+			  <motion.div
+				custom={0}
+				initial="hidden"
+				whileInView="visible"
+				viewport={{ once: true }}
+				variants={cardVariants}
+				className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-blue-400/50 transition-all duration-300"
+			  >
+				
+				<h3 className="text-xl font-bold mb-2 text-blue-400">Real Time Automatic Detection of Motorcyclists With and Without a Safety Helmet</h3>
+				<p className="text-gray-400 mb-2">2020 IEEE International Conference on Smart Electronics and Communication (ICOSEC)</p>
+				
+				<div className="mb-4">
+				  <h4 className="text-sm font-medium text-gray-400 mb-2">Authors:</h4>
+				  <div className="flex flex-wrap gap-3">
+					<span className="text-gray-300 text-sm px-3 py-1 bg-gray-700/50 rounded-full flex items-center gap-1">
+					  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+					  </svg>
+					  Dr. G. Krishna Kishore (Advisor)
+					</span>
+					<span className="text-gray-300 text-sm px-3 py-1 bg-gray-700/50 rounded-full flex items-center gap-1">
+					  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+					  </svg>
+					  Lakshmi Padmini Valanukonda
+					</span>
+					<span className="text-blue-300 text-sm px-3 py-1 bg-blue-900/20 rounded-full flex items-center gap-1">
+					  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+					  </svg>
+					  Durgamalleswarao Ponnuru
+					</span>
+					<span className="text-gray-300 text-sm px-3 py-1 bg-gray-700/50 rounded-full flex items-center gap-1">
+					  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+					  </svg>
+					  TejaSree Parasa
+					</span>
+				  </div>
+				</div>
+				<p className="text-gray-300 mb-4">
+				  Developed a real-time system using machine learning and computer vision techniques to automatically detect 
+				  motorcyclists without helmets from surveillance footage. The system achieved <span className="text-blue-400">87.6% accuracy</span> using 
+				  Histogram of Oriented Gradients (HOG) features and Support Vector Classification (SVC). Implemented a complete 
+				  pipeline including background subtraction, vehicle classification, helmet detection, and data visualization.
+				</p>
+				
+				<div className="mb-4">
+				  <h4 className="text-sm font-semibold text-gray-400 mb-2">KEY CONTRIBUTIONS:</h4>
+				  <ul className="space-y-2 text-sm text-gray-300">
+					<li className="flex items-start">
+					  <svg className="w-3 h-3 mt-1 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+					  </svg>
+					  Designed and implemented the complete ML pipeline using OpenCV, sklearn, and HOG descriptors
+					</li>
+					<li className="flex items-start">
+					  <svg className="w-3 h-3 mt-1 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+					  </svg>
+					  Developed a desktop application interface with live streaming and data visualization capabilities
+					</li>
+					<li className="flex items-start">
+					  <svg className="w-3 h-3 mt-1 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+					  </svg>
+					  Implemented MySQL database integration for storing violation records with timestamps
+					</li>
+					<li className="flex items-start">
+					  <svg className="w-3 h-3 mt-1 mr-2 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+					  </svg>
+					  Optimized the system for real-time performance using efficient feature extraction and classification
+					</li>
+				  </ul>
+				</div>
+				
+				<div className="flex flex-wrap gap-4">
+				  <a 
+					href="https://doi.org/10.1109/ICOSEC49089.2020.9215415" 
+					className="text-blue-400 hover:text-blue-300 inline-flex items-center gap-1"
+					target="_blank"
+					rel="noopener noreferrer"
+				  >
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+					</svg>
+					IEEE Xplore
+				  </a>
+				  <a 
+					href="https://doi.org/10.1109/ICOSEC49089.2020.9215415" 
+					className="text-gray-400 hover:text-gray-300 text-sm inline-flex items-center gap-1"
+					target="_blank"
+					rel="noopener noreferrer"
+				  >
+					DOI: 10.1109/ICOSEC49089.2020.9215415
+				  </a>
+				  <a 
+					href="/padmini2020.pdf" 
+					className="text-blue-400 hover:text-blue-300 inline-flex items-center gap-1"
+					download
+				  >
+					<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+					</svg>
+					Download PDF
+				  </a>
+				</div>
+				
+				<div className="mt-4 flex flex-wrap gap-2">
+				  {['Machine Learning', 'Computer Vision', 'OpenCV', 'HOG', 'SVM', 'Python', 'MySQL', 'Real-time Systems'].map((tech, j) => (
+					<span key={j} className="px-2 py-1 bg-gray-700/50 rounded-full text-xs">
+					  {tech}
+					</span>
+				  ))}
+				</div>
+			  </motion.div>
+			</div>
+		  </div>
+		</SectionWrapper>
 
         {/* Contact */}
         <SectionWrapper id="contact">
