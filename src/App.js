@@ -319,22 +319,22 @@ export default function App() {
                 },
                 { 
                   title: 'Databases', 
-                  items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redshift', 'BigQuery'],
+                  items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redshift', 'BigQuery', 'Cassandra', ],
                   icon: '🗃️'
                 },
                 { 
                   title: 'Visualization', 
-                  items: ['Power BI', 'Tableau', 'Plotly', 'Matplotlib'],
+                  items: ['Power BI', 'Tableau', 'Plotly', 'Matplotlib', 'Looker'],
                   icon: '📈'
                 },
                 { 
                   title: 'Cloud Platforms', 
-                  items: ['AWS (Glue, S3, Lambda)', 'Azure (Data Factory, Synapse)', 'Snowflake', 'Databricks', 'Terraform'],
+                  items: ['AWS (Glue, S3, Lambda, Athena, Crawler, Quicksight, Cloudwatch)', 'Azure (Data Factory, Synapse)', 'Snowflake', 'Databricks', 'Terraform'],
                   icon: '☁️'
                 },
                 { 
                   title: 'ETL/Workflow', 
-                  items: ['SSIS', 'Informatica', 'Talend', 'Airflow', 'Jenkins'],
+                  items: ['SSIS', 'Informatica', 'Talend', 'Airflow', 'Jenkins', 'Glue', 'dbt'],
                   icon: '⚙️'
                 }
               ].map((category, i) => (
@@ -519,6 +519,12 @@ export default function App() {
                   icon: "🚀"
                 },
                 {
+                  "title": "Cloud Data Pipeline Architecture",
+                  "description": "Delivered a scalable AWS data platform that transforms raw information into business intelligence through automated pipelines and self-service analytics capabilities",
+                  "technologies": ["AWS S3", "AWS Glue", "Amazon Athena", "AWS Glue Data Catalog", "Amazon QuickSight", "Serverless Architecture"],
+                  "icon": "📈"
+                },
+                {
                   title: "Real-Time Data Processing",
                   description: "Implemented a real-time data streaming solution using Apache Kafka and Spark, reducing data latency from hours to seconds",
                   technologies: ["Kafka", "Spark Streaming", "Delta Lake"],
@@ -536,13 +542,13 @@ export default function App() {
                   technologies: ["Power BI", "Snowflake", "DAX"],
                   icon: "🏥"
                 },
-				{
+				        {
                   title: "Robust ML Model Training Framework",
                   description: "Implemented data augmentation techniques and alignment regularization to enhance model robustness and generalization, integrated with automated CI/CD and re-training pipelines.",
                   technologies: ['Python', 'TensorFlow', 'CI/CD', 'MLflow', 'Data Augmentation', 'Docker', 'Kubernetes'],
                   icon: "🤖"
                 },
-				{
+				        {
                   title: "Real-Time Helmet Detection System",
                   description: "Developed a real-time surveillance system using OpenCV and machine learning to detect motorcyclists with and without helmets, achieving 87% accuracy.",
                   technologies: ['Python', 'OpenCV', 'HOG', 'LinearSVC', 'MySQL', 'Computer Vision', 'Machine Learning'],
