@@ -207,7 +207,7 @@ export default function App() {
               className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-6 w-full px-2"
             >
               <a 
-                href="mailto:dponnuru6@gmail.com" 
+                href="mailto:durgaponnuru3@gmail.com" 
                 className="px-6 py-3 rounded-full border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10 transition-all duration-300 flex items-center gap-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -216,7 +216,7 @@ export default function App() {
                 dponnuru6@gmail.com
               </a>
               <a
-                href="Durgamalleswarao_Resume.pdf"
+                href="DurgamalleswaraoPonnuru_Resume.pdf"
                 download
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 flex items-center gap-2"
               >
@@ -270,7 +270,7 @@ export default function App() {
                 className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
               >
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Accomplished Data Engineer with <span className="text-blue-400">5+ years</span> of diverse experience in designing, developing, and optimizing data-driven solutions across multiple industries, including technology, finance, and healthcare. Adept at building robust and scalable data pipelines, integrating complex data sources, and implementing advanced analytics to support business intelligence and data science initiatives.
+                  Accomplished Data Engineer with <span className="text-blue-400">4+ years</span> of diverse experience in designing, developing, and optimizing data-driven solutions across multiple industries, including technology, finance, and healthcare. Adept at building robust and scalable data pipelines, integrating complex data sources, and implementing advanced analytics to support business intelligence and data science initiatives.
                 </p>
               </motion.div>
               <motion.div 
@@ -380,45 +380,42 @@ export default function App() {
               
               {[
                 {
-                  company: "Molina Healthcare",
-                  period: "Apr 2024 – Present",
-                  role: "Data Engineer",
-                  location: "Long Beach, CA",
-                  bullets: [
-                    "Designed and implemented end-to-end data pipelines using AWS Glue and Apache Airflow",
-                    "Processed large-scale data using Apache Spark and Databricks, reducing processing time by 50%",
-                    "Developed data models in Snowflake to support complex analytics requirements",
-                    "Automated ETL workflows using Python, improving data reliability",
-                    "Built interactive dashboards using Tableau and Power BI",
-                    "Optimized SQL queries for faster data retrieval",
-                    "Implemented security protocols to safeguard sensitive data"
-                  ]
-                },
-                {
                   company: "Tata Consultancy Services",
-                  period: "Jun 2020 – Aug 2022",
+                  period: "Jan 2021 – Aug 2022",
                   role: "Data Engineer",
                   location: "India",
                   bullets: [
-                    "Designed and managed scalable ETL processes using SSIS and Informatica",
-                    "Utilized Azure Data Factory and Synapse Analytics for large-scale data processing",
-                    "Developed and optimized data pipelines in Databricks",
-                    "Automated data workflows with Python, reducing manual tasks",
-                    "Built dashboards in Power BI to visualize key metrics",
-                    "Implemented data governance practices"
+                    "Optimized end-to-end MLOps pipelines including data ingestion, transformation, model training, and monitoring using SageMaker and GCP Vertex AI",
+                    "Developed ML models using Random Forest, SVM, and KNN with CI/CD deployment via GitHub Actions",
+                    "Improved forecasting model accuracy by 15% using ensemble techniques for resource allocation and anomaly detection",
+                    "Integrated ML models into frontend apps using React for real-time prediction and responsiveness",
+                    "Defined SLAs, ensured data quality, and built microservices for inference using Docker and Python"
+                  ]
+                },
+                {
+                  company: "Indian Servers Pvt. Ltd.",
+                  period: "Apr 2019 – Dec 2020",
+                  role: "Associate Data Engineer",
+                  location: "India",
+                  bullets: [
+                    "Designed and optimized Hadoop/Spark ETL pipelines, improving processing speed by 30%",
+                    "Automated model deployments with Argo CD and GitHub Actions for consistency and scalability",
+                    "Integrated cloud storage with ML pipelines to enhance system performance and scalability",
+                    "Streamlined data governance by improving access and processing standards",
+                    "Worked in distributed environments to maintain pipeline robustness and performance"
                   ]
                 },
                 {
                   company: "Indian Servers",
-                  period: "May 2018 – May 2020",
-                  role: "Data Engineer Intern",
+                  period: "Aug 2018 – Mar 2019",
+                  role: "Jr. Data Analyst",
                   location: "India",
                   bullets: [
-                    "Assisted in ETL pipeline development using Talend and Apache Nifi",
-                    "Wrote SQL queries for data extraction and transformation",
-                    "Supported data analysis using Python (Pandas, NumPy)",
-                    "Created data visualizations with Tableau",
-                    "Participated in Agile project management using Jira"
+                    "Optimized ETL workflows using Talend, Apache NiFi, and SQL for data integration and transformation",
+                    "Performed data cleaning, validation, and analysis using Python (Pandas, NumPy)",
+                    "Created dashboards using Tableau and supported ad-hoc reporting for decision-making",
+                    "Collaborated on database design, API-based ingestion, and query optimization",
+                    "Used Jira and Git in Agile teams while documenting workflows and ensuring data security"
                   ]
                 }
               ].map((exp, i) => (
