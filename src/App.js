@@ -196,7 +196,7 @@ export default function App() {
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8"
               >
-                Data Engineer | Cloud & Big Data Specialist
+                GenAI & MLOps Engineer | LLM Fine-Tuning | Scalable NLP Systems
               </motion.p>
             </div>
             
@@ -213,7 +213,7 @@ export default function App() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                dponnuru6@gmail.com
+                durgaponnuru3@gmail.com
               </a>
               <a
                 href="DurgamalleswaraoPonnuru_Resume.pdf"
@@ -270,7 +270,7 @@ export default function App() {
                 className="bg-gray-800/50 p-8 rounded-xl border border-gray-700 shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
               >
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Accomplished Data Engineer with <span className="text-blue-400">4+ years</span> of diverse experience in designing, developing, and optimizing data-driven solutions across multiple industries, including technology, finance, and healthcare. Adept at building robust and scalable data pipelines, integrating complex data sources, and implementing advanced analytics to support business intelligence and data science initiatives.
+                  Experienced GenAI and MLOps Engineer with <span className="text-blue-400">4+ years</span> of hands-on expertise in building and deploying NLP and machine learning solutions in cloud-based environments. Proficient in fine-tuning large language models (LLMs), developing RAG pipelines, and serving scalable APIs using FastAPI, Docker, and Kubernetes. Strong background in CI/CD automation, and cross-functional collaboration to deliver robust, production-ready AI systems. Skilled in leveraging tools like AWS SageMaker, Vertex AI, and Weights & Biases to drive model performance and reliability.
                 </p>
               </motion.div>
               <motion.div 
@@ -282,10 +282,16 @@ export default function App() {
                 className="grid grid-cols-2 gap-4"
               >
                 {[
-                  { icon: '📊', title: 'Data Pipelines', desc: 'Design & implementation' },
-                  { icon: '☁️', title: 'Cloud Platforms', desc: 'AWS & Azure expert' },
-                  { icon: '⚡', title: 'Big Data', desc: 'Spark, Hadoop, Kafka' },
-                  { icon: '📈', title: 'Visualization', desc: 'Power BI & Tableau' }
+                  { icon: '🧠', title: 'GenAI & LLMs', desc: 'GPT, LLaMA, BERT, RAG, LangChain' },
+                  { icon: '⚙️', title: 'MLOps & Deployment', desc: 'FastAPI, Docker, Kubernetes' },
+                  { icon: '📊', title: 'Data Pipelines', desc: 'Airflow, Spark, Kafka, SQL' },
+                  { icon: '📦', title: 'Model Ops', desc: 'MLflow, Weights & Biases, GitHub Actions' },
+                  { icon: '☁️', title: 'Cloud Platforms', desc: 'AWS SageMaker, GCP Vertex AI, Azure ML' },
+                  { icon: '📈', title: 'Visualization', desc: 'Tableau, Streamlit, Gradio' },
+                  { icon: '🧪', title: 'NLP & ML Tools', desc: 'Scikit-Learn, TensorFlow, PyTorch, NLTK, SpaCy' },
+                  { icon: '🕵️‍♂️', title: 'Web Scraping', desc: 'Crawl4AI, BeautifulSoup, Requests' },
+                  { icon: '🔄', title: 'CI/CD Automation', desc: 'Argo CD, GitHub Actions' },
+                  { icon: '🔍', title: 'Search & Embeddings', desc: 'Sentence Transformers, Vector DBs' }                  
                 ].map((item, i) => (
                   <div key={i} className="bg-gray-800/50 p-4 rounded-lg border border-gray-700 hover:border-blue-400/50 transition-all duration-300">
                     <div className="text-2xl mb-2">{item.icon}</div>
@@ -307,35 +313,55 @@ export default function App() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
-                { 
-                  title: 'Programming', 
-                  items: ['Python', 'R', 'SQL', 'Java', 'Scala', 'Bash/Shell Scripting'],
+                {
+                  title: 'Programming',
+                  items: ['Python', 'R', 'SQL', 'C/C++', 'PySpark'],
                   icon: '💻'
                 },
-                { 
-                  title: 'Big Data', 
-                  items: ['Apache Spark', 'Hadoop', 'Kafka', 'Airflow', 'Flink', 'HDFS', 'HBase'],
+                {
+                  title: 'Big Data',
+                  items: ['Apache Spark', 'Hadoop', 'Kafka', 'Airflow'],
                   icon: '📊'
                 },
-                { 
-                  title: 'Databases', 
-                  items: ['SQL Server', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redshift', 'BigQuery', 'Cassandra', ],
+                {
+                  title: 'Databases',
+                  items: ['PostgreSQL', 'MongoDB', 'MySQL','SQL Server', 'Redshift', 'BigQuery', 'Cassandra' ],
                   icon: '🗃️'
                 },
-                { 
-                  title: 'Visualization', 
-                  items: ['Power BI', 'Tableau', 'Plotly', 'Matplotlib', 'Looker'],
+                {
+                  title: 'Visualization',
+                  items: ['Tableau', 'Streamlit', 'Gradio','PowerBI', 'Plotly', 'Seaborn', 'Matplotlib'],
                   icon: '📈'
                 },
-                { 
-                  title: 'Cloud Platforms', 
-                  items: ['AWS (Glue, S3, Lambda, Athena, Crawler, Quicksight, Cloudwatch)', 'Azure (Data Factory, Synapse)', 'Snowflake', 'Databricks', 'Terraform'],
+                {
+                  title: 'Cloud Platforms',
+                  items: ['AWS (SageMaker, Lambda)', 'Azure ML', 'GCP (Vertex AI)', 'Vercel'],
                   icon: '☁️'
                 },
-                { 
-                  title: 'ETL/Workflow', 
-                  items: ['SSIS', 'Informatica', 'Talend', 'Airflow', 'Jenkins', 'Glue', 'dbt'],
+                {
+                  title: 'ETL/Workflow',
+                  items: ['Talend', 'Apache NiFi', 'Airflow', 'CI/CD (GitHub Actions, Argo CD)'],
                   icon: '⚙️'
+                },
+                {
+                  title: 'MLOps & Deployment',
+                  items: ['Docker', 'Kubernetes', 'FastAPI', 'MLflow', 'Weights & Biases'],
+                  icon: '🚀'
+                },
+                {
+                  title: 'NLP & GenAI',
+                  items: ['Hugging Face', 'LangChain', 'LlamaIndex', 'SpaCy', 'NLTK', 'Transformers', 'RAG'],
+                  icon: '🧠'
+                },
+                {
+                  title: 'Model Optimization',
+                  items: ['QLoRA', 'PEFT', 'GridSearchCV'],
+                  icon: '⚡'
+                },
+                {
+                  title: 'Web Scraping',
+                  items: ['Crawl4AI', 'BeautifulSoup', 'Requests'],
+                  icon: '🔍'
                 }
               ].map((category, i) => (
                 <motion.div
@@ -380,16 +406,30 @@ export default function App() {
               
               {[
                 {
+                  company: "Symplore Inc.",
+                  period: "June 2024 – Present",
+                  role: "GenAI Engineer",
+                  location: "USA",
+                  bullets: [
+                    "Fine-tuned LLMs (LLaMA, GPT-2, BERT, T5) for summarization and Q&A, improving relevance by 18%",
+                    "Built GenAI apps using OpenAI GPT-3.5/4, FastAPI, and RAG pipelines with semantic search to reduce hallucinations",
+                    "Created preprocessing pipelines for unstructured data (text, JSON, Markdown) using pandas, spaCy, and NLTK",
+                    "Developed semantic search with sentence transformers and vector DBs across 100,000+ documents",
+                    "Containerized LLM services with Docker, exposed via FastAPI, and monitored using Weights & Biases",
+                    "Benchmarked model outputs using BLEU, ROUGE, and BERT Score across generative tasks"
+                  ]
+                },
+                {
                   company: "Tata Consultancy Services",
                   period: "Jan 2021 – Aug 2022",
-                  role: "Data Engineer",
+                  role: "Data MLOps Engineer",
                   location: "India",
                   bullets: [
-                    "Optimized end-to-end MLOps pipelines including data ingestion, transformation, model training, and monitoring using SageMaker and GCP Vertex AI",
-                    "Developed ML models using Random Forest, SVM, and KNN with CI/CD deployment via GitHub Actions",
-                    "Improved forecasting model accuracy by 15% using ensemble techniques for resource allocation and anomaly detection",
-                    "Integrated ML models into frontend apps using React for real-time prediction and responsiveness",
-                    "Defined SLAs, ensured data quality, and built microservices for inference using Docker and Python"
+                    "Optimized MLOps pipelines including data ingestion, transformation, model training, and monitoring",
+                    "Deployed ML models (Random Forest, SVM, KNN) with CI/CD using GitHub Actions",
+                    "Enhanced forecasting models with ensemble methods, improving accuracy by 15%",
+                    "Integrated models into React apps for real-time prediction and improved responsiveness",
+                    "Built microservices for inference with Python & Docker; monitored SLAs and ensured data quality"
                   ]
                 },
                 {
@@ -398,26 +438,23 @@ export default function App() {
                   role: "Associate Data Engineer",
                   location: "India",
                   bullets: [
-                    "Designed and optimized Hadoop/Spark ETL pipelines, improving processing speed by 30%",
-                    "Automated model deployments with Argo CD and GitHub Actions for consistency and scalability",
-                    "Integrated cloud storage with ML pipelines to enhance system performance and scalability",
-                    "Streamlined data governance by improving access and processing standards",
-                    "Worked in distributed environments to maintain pipeline robustness and performance"
+                    "Designed and optimized Hadoop/Spark pipelines, improving processing speed by 30%",
+                    "Integrated cloud storage with ML pipelines for scalable data access in high-demand environments",
+                    "Automated deployments using Argo CD and GitHub Actions for consistent model delivery"
                   ]
                 },
                 {
-                  company: "Indian Servers",
+                  company: "Indian Servers Pvt. Ltd.",
                   period: "Aug 2018 – Mar 2019",
-                  role: "Jr. Data Analyst",
+                  role: "Junior Data Analyst",
                   location: "India",
                   bullets: [
-                    "Optimized ETL workflows using Talend, Apache NiFi, and SQL for data integration and transformation",
-                    "Performed data cleaning, validation, and analysis using Python (Pandas, NumPy)",
-                    "Created dashboards using Tableau and supported ad-hoc reporting for decision-making",
-                    "Collaborated on database design, API-based ingestion, and query optimization",
-                    "Used Jira and Git in Agile teams while documenting workflows and ensuring data security"
+                    "Optimized ETL workflows using Talend, Apache NiFi, and SQL for automated data integration",
+                    "Performed data cleaning and analysis in Python to generate actionable business insights",
+                    "Designed Tableau dashboards and supported ad-hoc reporting for informed decision-making",
+                    "Contributed to API-based ingestion and database design for scalable analytics infrastructure"
                   ]
-                }
+                }                
               ].map((exp, i) => (
                 <motion.div
                   key={i}
@@ -510,16 +547,40 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
+                  title: "GenAI Application with RAG Pipeline",
+                  description: "Built GenAI applications using GPT-4 and FastAPI with semantic search and Retrieval-Augmented Generation (RAG) pipelines, reducing hallucination and improving response relevance by 18%",
+                  technologies: ["OpenAI GPT-4", "FastAPI", "LangChain", "LlamaIndex", "Docker", "Vector DBs"],
+                  icon: "🧠"
+                },
+                {
+                  title: "Large Language Model Fine-Tuning",
+                  description: "Fine-tuned domain-specific LLMs like LLaMA, GPT-2, and T5 for summarization and Q&A tasks using unstructured datasets, achieving measurable performance boosts using standard NLP metrics",
+                  technologies: ["LLaMA", "GPT-2", "T5", "NLTK", "spaCy", "BERT Score", "BLEU", "ROUGE"],
+                  icon: "📚"
+                },
+                {
+                  title: "MLOps Pipeline Automation",
+                  description: "Automated end-to-end MLOps pipelines for data ingestion, model training, and deployment using Airflow, Docker, and GitHub Actions, ensuring reliable and scalable model lifecycle management",
+                  technologies: ["Airflow", "Docker", "GitHub Actions", "SageMaker", "Vertex AI"],
+                  icon: "⚙️"
+                },
+                {
+                  title: "Text Classification using NLP",
+                  description: "Achieved 81% accuracy in sentiment classification of Amazon reviews by applying preprocessing techniques and SVM with GridSearchCV for hyperparameter tuning",
+                  technologies: ["SVM", "GridSearchCV", "Bag of Words", "TF-IDF", "NLTK"],
+                  icon: "💬"
+                },
+                {
                   title: "Cloud Data Migration",
                   description: "Successfully migrated 10 TB of data from on-premise to AWS, improving data accessibility and performance",
                   technologies: ["AWS S3", "Glue", "Lambda", "Terraform"],
                   icon: "🚀"
                 },
                 {
-                  "title": "Cloud Data Pipeline Architecture",
-                  "description": "Delivered a scalable AWS data platform that transforms raw information into business intelligence through automated pipelines and self-service analytics capabilities",
-                  "technologies": ["AWS S3", "AWS Glue", "Amazon Athena", "AWS Glue Data Catalog", "Amazon QuickSight", "Serverless Architecture"],
-                  "icon": "📈"
+                  title: "Cloud Data Pipeline Architecture",
+                  description: "Delivered a scalable AWS data platform that transforms raw information into business intelligence through automated pipelines and self-service analytics capabilities",
+                  technologies: ["AWS S3", "AWS Glue", "Amazon Athena", "AWS Glue Data Catalog", "Amazon QuickSight", "Serverless Architecture"],
+                  icon: "📈"
                 },
                 {
                   title: "Real-Time Data Processing",
